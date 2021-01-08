@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.my.servermvc.dao.RoleDao">
+    <resultMap id="role" type="com.my.servermvc.entity.Role">
+        <result column="role_id" property="roleId" jdbcType="CHAR"></result>
+        <result column="role_name" property="roleName" jdbcType="CHAR"></result>
+        <result column="role_create_time" property="createTime" jdbcType="DATE"></result>
+        <association property="createUser" javaType="com.my.servermvc.entity.User">
+            <result column="user_id" property="userId" jdbcType="CHAR"></result>
+            <result column="user_name" property="userName" jdbcType="CHAR"></result>
+        </association>
+    </resultMap>
+
+    <select id="selectRoleList" resultMap="role">
+        select * from role,user where
+        <trim>
+            <if test="@com.my.common.utils.StringUtil@isNotEmpty(query)">
+                role_name like CONCAT('%',#{query},'%') and
+            </if>
+        </trim>
+        role.create_user=user.user_id
+        limit #{pageNum} , #{pageSize}
+    </select>
+
+    <select id="countRole" resultType="Integer">
+        select count(*) from role
+    </select>
+
+    <delete id="deleteRoleById" parameterType="String">
+        delete from role where role_id = #{roleId}
+    </delete>
+
+    <insert id="addRole" parameterType="com.my.servermvc.entity.Role">
+        insert into role
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            role_id,
+            <if test="@com.my.common.utils.StringUtil@isNotEmpty(roleName)">
+                role_name,
+            </if>
+            <if test="@com.my.common.utils.StringUtil@isNotEmpty(createUser.userId)">
+                create_user ,
+            </if>
+            <if test="@com.my.common.utils.StringUtil@isNotEmpty(createTime)">
+                role_create_time ,
+            </if>
+        </trim>
+        values
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            #{roleId},
+            <if test="@com.my.common.utils.StringUtil@isNotEmpty(roleName)">
+                #{roleName},
+            </if>
+            <if test="@com.my.common.utils.StringUtil@isNotEmpty(createUser.userId)">
+                #{createUser.userId},
+            </if>
+            <if test="@com.my.common.utils.StringUtil@isNotEmpty(createTime)">
+                #{createTime},
+            </if>
+        </trim>
+    </insert>
+
+    <select id="selectRole" resultMap="role">
+        select * from role
+    </select>
+</mapper>

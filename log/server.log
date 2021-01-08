@@ -1,0 +1,152 @@
+2020-11-25 14:18:25.502  INFO 19780 --- [restartedMain] com.my.servermvc.ServerMvcApplication    : Starting ServerMvcApplication on Smile with PID 19780 (D:\IDEA\server-vue\server-mvc\target\classes started by 小虎 in D:\IDEA\server-vue)
+2020-11-25 14:18:25.514 DEBUG 19780 --- [restartedMain] com.my.servermvc.ServerMvcApplication    : Running with Spring Boot v2.3.3.RELEASE, Spring v5.2.8.RELEASE
+2020-11-25 14:18:25.515  INFO 19780 --- [restartedMain] com.my.servermvc.ServerMvcApplication    : No active profile set, falling back to default profiles: default
+2020-11-25 14:18:25.626  INFO 19780 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2020-11-25 14:18:25.627  INFO 19780 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2020-11-25 14:18:28.719  INFO 19780 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 9999 (http)
+2020-11-25 14:18:28.735  INFO 19780 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2020-11-25 14:18:28.735  INFO 19780 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.37]
+2020-11-25 14:18:28.856  INFO 19780 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2020-11-25 14:18:28.856  INFO 19780 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 3228 ms
+2020-11-25 14:18:30.021  INFO 19780 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2020-11-25 14:18:30.503  INFO 19780 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2020-11-25 14:18:30.595  INFO 19780 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 9999 (http) with context path ''
+2020-11-25 14:18:30.618  INFO 19780 --- [restartedMain] com.my.servermvc.ServerMvcApplication    : Started ServerMvcApplication in 6.029 seconds (JVM running for 10.226)
+2020-11-25 14:20:37.838  INFO 19780 --- [http-nio-9999-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-11-25 14:20:37.870  INFO 19780 --- [http-nio-9999-exec-2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2020-11-25 14:20:38.148  INFO 19780 --- [http-nio-9999-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 277 ms
+2020-11-25 14:20:38.787  INFO 19780 --- [http-nio-9999-exec-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2020-11-25 14:20:38.796  WARN 19780 --- [http-nio-9999-exec-1] com.zaxxer.hikari.util.DriverDataSource  : Registered driver with driverClassName=com.mysql.jdbc.Driver was not found, trying direct instantiation.
+2020-11-25 14:20:40.912  INFO 19780 --- [http-nio-9999-exec-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2020-11-25 14:20:40.939 DEBUG 19780 --- [http-nio-9999-exec-1] c.m.s.dao.UserDao.selectUserByLoginName  : ==>  Preparing: select user_id, user_name, login_name, password, age, sex, status, last_login_ip,last_login_time,del_flag from user where login_name=? 
+2020-11-25 14:20:41.001 DEBUG 19780 --- [http-nio-9999-exec-1] c.m.s.dao.UserDao.selectUserByLoginName  : ==> Parameters: admin(String)
+2020-11-25 14:20:41.184 DEBUG 19780 --- [http-nio-9999-exec-1] c.m.s.dao.UserDao.selectUserByLoginName  : <==      Total: 1
+2020-11-25 14:20:41.284 DEBUG 19780 --- [http-nio-9999-exec-1] com.my.servermvc.dao.UserDao.updateUser  : ==>  Preparing: update user set user_name=?, password=?, last_login_ip=?, last_login_time=? where user_id=? 
+2020-11-25 14:20:41.291 DEBUG 19780 --- [http-nio-9999-exec-1] com.my.servermvc.dao.UserDao.updateUser  : ==> Parameters: admin(String), 123456(String), 127.0.0.1(String), 2020-11-25 14:20:41.21(Timestamp), 1(String)
+2020-11-25 14:20:41.341 DEBUG 19780 --- [http-nio-9999-exec-1] com.my.servermvc.dao.UserDao.updateUser  : <==    Updates: 1
+2020-11-25 14:20:42.154 DEBUG 19780 --- [http-nio-9999-exec-3] c.m.s.dao.MenuDao.selectMenuList         : ==>  Preparing: select * from menu 
+2020-11-25 14:20:42.155 DEBUG 19780 --- [http-nio-9999-exec-3] c.m.s.dao.MenuDao.selectMenuList         : ==> Parameters: 
+2020-11-25 14:20:42.171 DEBUG 19780 --- [http-nio-9999-exec-3] c.m.s.dao.MenuDao.selectMenuList         : <==      Total: 5
+2020-11-25 14:20:45.228 DEBUG 19780 --- [http-nio-9999-exec-7] c.m.s.dao.RoleDao.selectRoleList         : ==>  Preparing: select * from role,user where role.create_user=user.user_id limit ? , ? 
+2020-11-25 14:20:45.229 DEBUG 19780 --- [http-nio-9999-exec-7] c.m.s.dao.RoleDao.selectRoleList         : ==> Parameters: 0(Integer), 5(Integer)
+2020-11-25 14:20:45.248 DEBUG 19780 --- [http-nio-9999-exec-7] c.m.s.dao.RoleDao.selectRoleList         : <==      Total: 4
+2020-11-25 14:20:45.249 DEBUG 19780 --- [http-nio-9999-exec-7] com.my.servermvc.dao.RoleDao.countRole   : ==>  Preparing: select count(*) from role 
+2020-11-25 14:20:45.250 DEBUG 19780 --- [http-nio-9999-exec-7] com.my.servermvc.dao.RoleDao.countRole   : ==> Parameters: 
+2020-11-25 14:20:45.282 DEBUG 19780 --- [http-nio-9999-exec-7] com.my.servermvc.dao.RoleDao.countRole   : <==      Total: 1
+2020-11-25 14:20:52.165 DEBUG 19780 --- [http-nio-9999-exec-1] com.my.servermvc.dao.RoleDao.selectRole  : ==>  Preparing: select * from role 
+2020-11-25 14:20:52.166 DEBUG 19780 --- [http-nio-9999-exec-1] com.my.servermvc.dao.RoleDao.selectRole  : ==> Parameters: 
+2020-11-25 14:20:52.177 DEBUG 19780 --- [http-nio-9999-exec-2] c.m.s.dao.UserDao.selectUserListByPage   : ==>  Preparing: select login_name,user_id,user_name,create_time,status,role.* from user , role where role.role_id=user.user_role_id and del_flag = 1 limit ? , ? 
+2020-11-25 14:20:52.177 DEBUG 19780 --- [http-nio-9999-exec-1] com.my.servermvc.dao.RoleDao.selectRole  : <==      Total: 4
+2020-11-25 14:20:52.178 DEBUG 19780 --- [http-nio-9999-exec-2] c.m.s.dao.UserDao.selectUserListByPage   : ==> Parameters: 0(Integer), 5(Integer)
+2020-11-25 14:20:52.198 DEBUG 19780 --- [http-nio-9999-exec-2] c.m.s.dao.UserDao.selectUserListByPage   : <==      Total: 5
+2020-11-25 14:20:52.199 DEBUG 19780 --- [http-nio-9999-exec-2] com.my.servermvc.dao.UserDao.countUser   : ==>  Preparing: select count(*) from user where del_flag = 1 
+2020-11-25 14:20:52.200 DEBUG 19780 --- [http-nio-9999-exec-2] com.my.servermvc.dao.UserDao.countUser   : ==> Parameters: 
+2020-11-25 14:20:52.202 DEBUG 19780 --- [http-nio-9999-exec-2] com.my.servermvc.dao.UserDao.countUser   : <==      Total: 1
+2020-11-25 14:20:54.214 DEBUG 19780 --- [http-nio-9999-exec-3] c.m.s.dao.UserDao.selectUserListByPage   : ==>  Preparing: select login_name,user_id,user_name,create_time,status,role.* from user , role where role.role_id=user.user_role_id and del_flag = 1 limit ? , ? 
+2020-11-25 14:20:54.214 DEBUG 19780 --- [http-nio-9999-exec-3] c.m.s.dao.UserDao.selectUserListByPage   : ==> Parameters: 5(Integer), 5(Integer)
+2020-11-25 14:20:54.221 DEBUG 19780 --- [http-nio-9999-exec-3] c.m.s.dao.UserDao.selectUserListByPage   : <==      Total: 3
+2020-11-25 14:20:54.223 DEBUG 19780 --- [http-nio-9999-exec-3] com.my.servermvc.dao.UserDao.countUser   : ==>  Preparing: select count(*) from user where del_flag = 1 
+2020-11-25 14:20:54.223 DEBUG 19780 --- [http-nio-9999-exec-3] com.my.servermvc.dao.UserDao.countUser   : ==> Parameters: 
+2020-11-25 14:20:54.225 DEBUG 19780 --- [http-nio-9999-exec-3] com.my.servermvc.dao.UserDao.countUser   : <==      Total: 1
+2020-11-25 14:20:56.097 DEBUG 19780 --- [http-nio-9999-exec-5] c.m.s.dao.UserDao.selectUserListByPage   : ==>  Preparing: select login_name,user_id,user_name,create_time,status,role.* from user , role where role.role_id=user.user_role_id and del_flag = 1 limit ? , ? 
+2020-11-25 14:20:56.097 DEBUG 19780 --- [http-nio-9999-exec-5] c.m.s.dao.UserDao.selectUserListByPage   : ==> Parameters: 0(Integer), 5(Integer)
+2020-11-25 14:20:56.101 DEBUG 19780 --- [http-nio-9999-exec-5] c.m.s.dao.UserDao.selectUserListByPage   : <==      Total: 5
+2020-11-25 14:20:56.102 DEBUG 19780 --- [http-nio-9999-exec-5] com.my.servermvc.dao.UserDao.countUser   : ==>  Preparing: select count(*) from user where del_flag = 1 
+2020-11-25 14:20:56.103 DEBUG 19780 --- [http-nio-9999-exec-5] com.my.servermvc.dao.UserDao.countUser   : ==> Parameters: 
+2020-11-25 14:20:56.105 DEBUG 19780 --- [http-nio-9999-exec-5] com.my.servermvc.dao.UserDao.countUser   : <==      Total: 1
+2020-11-25 14:20:58.195 DEBUG 19780 --- [http-nio-9999-exec-8] c.m.s.dao.RoleDao.selectRoleList         : ==>  Preparing: select * from role,user where role.create_user=user.user_id limit ? , ? 
+2020-11-25 14:20:58.196 DEBUG 19780 --- [http-nio-9999-exec-8] c.m.s.dao.RoleDao.selectRoleList         : ==> Parameters: 0(Integer), 5(Integer)
+2020-11-25 14:20:58.201 DEBUG 19780 --- [http-nio-9999-exec-8] c.m.s.dao.RoleDao.selectRoleList         : <==      Total: 4
+2020-11-25 14:20:58.202 DEBUG 19780 --- [http-nio-9999-exec-8] com.my.servermvc.dao.RoleDao.countRole   : ==>  Preparing: select count(*) from role 
+2020-11-25 14:20:58.203 DEBUG 19780 --- [http-nio-9999-exec-8] com.my.servermvc.dao.RoleDao.countRole   : ==> Parameters: 
+2020-11-25 14:20:58.206 DEBUG 19780 --- [http-nio-9999-exec-8] com.my.servermvc.dao.RoleDao.countRole   : <==      Total: 1
+2020-11-25 14:21:41.737 DEBUG 19780 --- [http-nio-9999-exec-1] com.my.servermvc.dao.RoleDao.selectRole  : ==>  Preparing: select * from role 
+2020-11-25 14:21:41.737 DEBUG 19780 --- [http-nio-9999-exec-1] com.my.servermvc.dao.RoleDao.selectRole  : ==> Parameters: 
+2020-11-25 14:21:41.737 DEBUG 19780 --- [http-nio-9999-exec-10] c.m.s.dao.UserDao.selectUserListByPage   : ==>  Preparing: select login_name,user_id,user_name,create_time,status,role.* from user , role where role.role_id=user.user_role_id and del_flag = 1 limit ? , ? 
+2020-11-25 14:21:41.739 DEBUG 19780 --- [http-nio-9999-exec-10] c.m.s.dao.UserDao.selectUserListByPage   : ==> Parameters: 0(Integer), 5(Integer)
+2020-11-25 14:21:41.745 DEBUG 19780 --- [http-nio-9999-exec-1] com.my.servermvc.dao.RoleDao.selectRole  : <==      Total: 4
+2020-11-25 14:21:41.749 DEBUG 19780 --- [http-nio-9999-exec-10] c.m.s.dao.UserDao.selectUserListByPage   : <==      Total: 5
+2020-11-25 14:21:41.753 DEBUG 19780 --- [http-nio-9999-exec-10] com.my.servermvc.dao.UserDao.countUser   : ==>  Preparing: select count(*) from user where del_flag = 1 
+2020-11-25 14:21:41.754 DEBUG 19780 --- [http-nio-9999-exec-10] com.my.servermvc.dao.UserDao.countUser   : ==> Parameters: 
+2020-11-25 14:21:41.757 DEBUG 19780 --- [http-nio-9999-exec-10] com.my.servermvc.dao.UserDao.countUser   : <==      Total: 1
+2020-11-25 14:21:43.963 DEBUG 19780 --- [http-nio-9999-exec-3] c.m.s.dao.RoleDao.selectRoleList         : ==>  Preparing: select * from role,user where role.create_user=user.user_id limit ? , ? 
+2020-11-25 14:21:43.966 DEBUG 19780 --- [http-nio-9999-exec-3] c.m.s.dao.RoleDao.selectRoleList         : ==> Parameters: 0(Integer), 5(Integer)
+2020-11-25 14:21:43.970 DEBUG 19780 --- [http-nio-9999-exec-3] c.m.s.dao.RoleDao.selectRoleList         : <==      Total: 4
+2020-11-25 14:21:43.971 DEBUG 19780 --- [http-nio-9999-exec-3] com.my.servermvc.dao.RoleDao.countRole   : ==>  Preparing: select count(*) from role 
+2020-11-25 14:21:43.972 DEBUG 19780 --- [http-nio-9999-exec-3] com.my.servermvc.dao.RoleDao.countRole   : ==> Parameters: 
+2020-11-25 14:21:43.977 DEBUG 19780 --- [http-nio-9999-exec-3] com.my.servermvc.dao.RoleDao.countRole   : <==      Total: 1
+2020-11-25 14:21:55.503 DEBUG 19780 --- [http-nio-9999-exec-7] c.m.s.dao.UserDao.selectUserListByPage   : ==>  Preparing: select login_name,user_id,user_name,create_time,status,role.* from user , role where role.role_id=user.user_role_id and del_flag = 1 limit ? , ? 
+2020-11-25 14:21:55.506 DEBUG 19780 --- [http-nio-9999-exec-6] com.my.servermvc.dao.RoleDao.selectRole  : ==>  Preparing: select * from role 
+2020-11-25 14:21:55.507 DEBUG 19780 --- [http-nio-9999-exec-6] com.my.servermvc.dao.RoleDao.selectRole  : ==> Parameters: 
+2020-11-25 14:21:55.506 DEBUG 19780 --- [http-nio-9999-exec-7] c.m.s.dao.UserDao.selectUserListByPage   : ==> Parameters: 0(Integer), 5(Integer)
+2020-11-25 14:21:55.513 DEBUG 19780 --- [http-nio-9999-exec-6] com.my.servermvc.dao.RoleDao.selectRole  : <==      Total: 4
+2020-11-25 14:21:55.517 DEBUG 19780 --- [http-nio-9999-exec-7] c.m.s.dao.UserDao.selectUserListByPage   : <==      Total: 5
+2020-11-25 14:21:55.523 DEBUG 19780 --- [http-nio-9999-exec-7] com.my.servermvc.dao.UserDao.countUser   : ==>  Preparing: select count(*) from user where del_flag = 1 
+2020-11-25 14:21:55.523 DEBUG 19780 --- [http-nio-9999-exec-7] com.my.servermvc.dao.UserDao.countUser   : ==> Parameters: 
+2020-11-25 14:21:55.524 DEBUG 19780 --- [http-nio-9999-exec-7] com.my.servermvc.dao.UserDao.countUser   : <==      Total: 1
+2020-11-25 14:21:57.880 DEBUG 19780 --- [http-nio-9999-exec-1] c.m.s.dao.RoleDao.selectRoleList         : ==>  Preparing: select * from role,user where role.create_user=user.user_id limit ? , ? 
+2020-11-25 14:21:57.881 DEBUG 19780 --- [http-nio-9999-exec-1] c.m.s.dao.RoleDao.selectRoleList         : ==> Parameters: 0(Integer), 5(Integer)
+2020-11-25 14:21:57.885 DEBUG 19780 --- [http-nio-9999-exec-1] c.m.s.dao.RoleDao.selectRoleList         : <==      Total: 4
+2020-11-25 14:21:57.886 DEBUG 19780 --- [http-nio-9999-exec-1] com.my.servermvc.dao.RoleDao.countRole   : ==>  Preparing: select count(*) from role 
+2020-11-25 14:21:57.886 DEBUG 19780 --- [http-nio-9999-exec-1] com.my.servermvc.dao.RoleDao.countRole   : ==> Parameters: 
+2020-11-25 14:21:57.917 DEBUG 19780 --- [http-nio-9999-exec-1] com.my.servermvc.dao.RoleDao.countRole   : <==      Total: 1
+2020-11-25 14:29:09.892 DEBUG 19780 --- [http-nio-9999-exec-4] c.m.s.dao.MenuDao.selectMenuList         : ==>  Preparing: select * from menu 
+2020-11-25 14:29:09.918 DEBUG 19780 --- [http-nio-9999-exec-4] c.m.s.dao.MenuDao.selectMenuList         : ==> Parameters: 
+2020-11-25 14:29:10.002 DEBUG 19780 --- [http-nio-9999-exec-4] c.m.s.dao.MenuDao.selectMenuList         : <==      Total: 7
+2020-11-25 14:29:10.251 DEBUG 19780 --- [http-nio-9999-exec-2] c.m.s.dao.RoleDao.selectRoleList         : ==>  Preparing: select * from role,user where role.create_user=user.user_id limit ? , ? 
+2020-11-25 14:29:10.252 DEBUG 19780 --- [http-nio-9999-exec-2] c.m.s.dao.RoleDao.selectRoleList         : ==> Parameters: 0(Integer), 5(Integer)
+2020-11-25 14:29:10.269 DEBUG 19780 --- [http-nio-9999-exec-2] c.m.s.dao.RoleDao.selectRoleList         : <==      Total: 4
+2020-11-25 14:29:10.270 DEBUG 19780 --- [http-nio-9999-exec-2] com.my.servermvc.dao.RoleDao.countRole   : ==>  Preparing: select count(*) from role 
+2020-11-25 14:29:10.270 DEBUG 19780 --- [http-nio-9999-exec-2] com.my.servermvc.dao.RoleDao.countRole   : ==> Parameters: 
+2020-11-25 14:29:10.276 DEBUG 19780 --- [http-nio-9999-exec-2] com.my.servermvc.dao.RoleDao.countRole   : <==      Total: 1
+2020-11-25 14:29:13.608 DEBUG 19780 --- [http-nio-9999-exec-6] c.m.s.dao.MenuDao.selectMenuList         : ==>  Preparing: select * from menu 
+2020-11-25 14:29:13.609 DEBUG 19780 --- [http-nio-9999-exec-6] c.m.s.dao.MenuDao.selectMenuList         : ==> Parameters: 
+2020-11-25 14:29:13.618 DEBUG 19780 --- [http-nio-9999-exec-7] c.m.s.dao.RoleDao.selectRoleList         : ==>  Preparing: select * from role,user where role.create_user=user.user_id limit ? , ? 
+2020-11-25 14:29:13.619 DEBUG 19780 --- [http-nio-9999-exec-7] c.m.s.dao.RoleDao.selectRoleList         : ==> Parameters: 0(Integer), 5(Integer)
+2020-11-25 14:29:13.623 DEBUG 19780 --- [http-nio-9999-exec-7] c.m.s.dao.RoleDao.selectRoleList         : <==      Total: 4
+2020-11-25 14:29:13.624 DEBUG 19780 --- [http-nio-9999-exec-7] com.my.servermvc.dao.RoleDao.countRole   : ==>  Preparing: select count(*) from role 
+2020-11-25 14:29:13.624 DEBUG 19780 --- [http-nio-9999-exec-7] com.my.servermvc.dao.RoleDao.countRole   : ==> Parameters: 
+2020-11-25 14:29:13.629 DEBUG 19780 --- [http-nio-9999-exec-6] c.m.s.dao.MenuDao.selectMenuList         : <==      Total: 7
+2020-11-25 14:29:13.632 DEBUG 19780 --- [http-nio-9999-exec-7] com.my.servermvc.dao.RoleDao.countRole   : <==      Total: 1
+2020-11-25 14:39:23.395 DEBUG 19780 --- [http-nio-9999-exec-1] c.m.s.dao.MenuDao.selectMenuList         : ==>  Preparing: select * from menu 
+2020-11-25 14:39:23.395 DEBUG 19780 --- [http-nio-9999-exec-10] c.m.s.dao.RoleDao.selectRoleList         : ==>  Preparing: select * from role,user where role.create_user=user.user_id limit ? , ? 
+2020-11-25 14:39:23.407 DEBUG 19780 --- [http-nio-9999-exec-1] c.m.s.dao.MenuDao.selectMenuList         : ==> Parameters: 
+2020-11-25 14:39:23.407 DEBUG 19780 --- [http-nio-9999-exec-10] c.m.s.dao.RoleDao.selectRoleList         : ==> Parameters: 0(Integer), 5(Integer)
+2020-11-25 14:39:23.444 DEBUG 19780 --- [http-nio-9999-exec-1] c.m.s.dao.MenuDao.selectMenuList         : <==      Total: 7
+2020-11-25 14:39:23.450 DEBUG 19780 --- [http-nio-9999-exec-10] c.m.s.dao.RoleDao.selectRoleList         : <==      Total: 4
+2020-11-25 14:39:23.452 DEBUG 19780 --- [http-nio-9999-exec-10] com.my.servermvc.dao.RoleDao.countRole   : ==>  Preparing: select count(*) from role 
+2020-11-25 14:39:23.452 DEBUG 19780 --- [http-nio-9999-exec-10] com.my.servermvc.dao.RoleDao.countRole   : ==> Parameters: 
+2020-11-25 14:39:23.473 DEBUG 19780 --- [http-nio-9999-exec-10] com.my.servermvc.dao.RoleDao.countRole   : <==      Total: 1
+2020-11-25 14:39:26.016 DEBUG 19780 --- [http-nio-9999-exec-4] c.m.s.dao.MenuDao.selectMenuList         : ==>  Preparing: select * from menu 
+2020-11-25 14:39:26.017 DEBUG 19780 --- [http-nio-9999-exec-4] c.m.s.dao.MenuDao.selectMenuList         : ==> Parameters: 
+2020-11-25 14:39:26.022 DEBUG 19780 --- [http-nio-9999-exec-4] c.m.s.dao.MenuDao.selectMenuList         : <==      Total: 7
+2020-11-25 14:39:26.102 DEBUG 19780 --- [http-nio-9999-exec-2] c.m.s.dao.RoleDao.selectRoleList         : ==>  Preparing: select * from role,user where role.create_user=user.user_id limit ? , ? 
+2020-11-25 14:39:26.102 DEBUG 19780 --- [http-nio-9999-exec-2] c.m.s.dao.RoleDao.selectRoleList         : ==> Parameters: 0(Integer), 5(Integer)
+2020-11-25 14:39:26.106 DEBUG 19780 --- [http-nio-9999-exec-2] c.m.s.dao.RoleDao.selectRoleList         : <==      Total: 4
+2020-11-25 14:39:26.107 DEBUG 19780 --- [http-nio-9999-exec-2] com.my.servermvc.dao.RoleDao.countRole   : ==>  Preparing: select count(*) from role 
+2020-11-25 14:39:26.107 DEBUG 19780 --- [http-nio-9999-exec-2] com.my.servermvc.dao.RoleDao.countRole   : ==> Parameters: 
+2020-11-25 14:39:26.111 DEBUG 19780 --- [http-nio-9999-exec-2] com.my.servermvc.dao.RoleDao.countRole   : <==      Total: 1
+2020-11-25 14:42:17.870 DEBUG 19780 --- [http-nio-9999-exec-7] c.m.s.dao.MenuDao.selectMenuList         : ==>  Preparing: select * from menu 
+2020-11-25 14:42:17.872 DEBUG 19780 --- [http-nio-9999-exec-7] c.m.s.dao.MenuDao.selectMenuList         : ==> Parameters: 
+2020-11-25 14:42:17.874 DEBUG 19780 --- [http-nio-9999-exec-6] c.m.s.dao.RoleDao.selectRoleList         : ==>  Preparing: select * from role,user where role.create_user=user.user_id limit ? , ? 
+2020-11-25 14:42:17.876 DEBUG 19780 --- [http-nio-9999-exec-6] c.m.s.dao.RoleDao.selectRoleList         : ==> Parameters: 0(Integer), 5(Integer)
+2020-11-25 14:42:17.883 DEBUG 19780 --- [http-nio-9999-exec-6] c.m.s.dao.RoleDao.selectRoleList         : <==      Total: 4
+2020-11-25 14:42:17.884 DEBUG 19780 --- [http-nio-9999-exec-6] com.my.servermvc.dao.RoleDao.countRole   : ==>  Preparing: select count(*) from role 
+2020-11-25 14:42:17.884 DEBUG 19780 --- [http-nio-9999-exec-6] com.my.servermvc.dao.RoleDao.countRole   : ==> Parameters: 
+2020-11-25 14:42:17.891 DEBUG 19780 --- [http-nio-9999-exec-6] com.my.servermvc.dao.RoleDao.countRole   : <==      Total: 1
+2020-11-25 14:42:17.894 DEBUG 19780 --- [http-nio-9999-exec-7] c.m.s.dao.MenuDao.selectMenuList         : <==      Total: 7
+2020-11-25 14:43:47.123 DEBUG 19780 --- [http-nio-9999-exec-1] c.m.s.dao.UserDao.selectUserByLoginName  : ==>  Preparing: select user_id, user_name, login_name, password, age, sex, status, last_login_ip,last_login_time,del_flag from user where login_name=? 
+2020-11-25 14:43:47.133 DEBUG 19780 --- [http-nio-9999-exec-1] c.m.s.dao.UserDao.selectUserByLoginName  : ==> Parameters: admin(String)
+2020-11-25 14:43:47.153 DEBUG 19780 --- [http-nio-9999-exec-1] c.m.s.dao.UserDao.selectUserByLoginName  : <==      Total: 1
+2020-11-25 14:43:47.162 DEBUG 19780 --- [http-nio-9999-exec-1] com.my.servermvc.dao.UserDao.updateUser  : ==>  Preparing: update user set user_name=?, password=?, last_login_ip=?, last_login_time=? where user_id=? 
+2020-11-25 14:43:47.168 DEBUG 19780 --- [http-nio-9999-exec-1] com.my.servermvc.dao.UserDao.updateUser  : ==> Parameters: admin(String), 123456(String), 127.0.0.1(String), 2020-11-25 14:43:47.156(Timestamp), 1(String)
+2020-11-25 14:43:47.188 DEBUG 19780 --- [http-nio-9999-exec-1] com.my.servermvc.dao.UserDao.updateUser  : <==    Updates: 1
+2020-11-25 14:43:47.241 DEBUG 19780 --- [http-nio-9999-exec-10] c.m.s.dao.MenuDao.selectMenuList         : ==>  Preparing: select * from menu 
+2020-11-25 14:43:47.243 DEBUG 19780 --- [http-nio-9999-exec-10] c.m.s.dao.MenuDao.selectMenuList         : ==> Parameters: 
+2020-11-25 14:43:47.250 DEBUG 19780 --- [http-nio-9999-exec-10] c.m.s.dao.MenuDao.selectMenuList         : <==      Total: 7
+2020-11-25 15:16:55.429 DEBUG 19780 --- [http-nio-9999-exec-5] c.m.s.dao.MenuDao.selectMenuList         : ==>  Preparing: select * from menu 
+2020-11-25 15:16:55.451 DEBUG 19780 --- [http-nio-9999-exec-5] c.m.s.dao.MenuDao.selectMenuList         : ==> Parameters: 
+2020-11-25 15:16:55.531 DEBUG 19780 --- [http-nio-9999-exec-5] c.m.s.dao.MenuDao.selectMenuList         : <==      Total: 7
+2020-11-25 16:59:05.858  INFO 19780 --- [SpringContextShutdownHook] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2020-11-25 16:59:05.885  INFO 19780 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2020-11-25 16:59:05.960  INFO 19780 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.

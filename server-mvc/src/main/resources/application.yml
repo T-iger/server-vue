@@ -1,0 +1,19 @@
+server:
+  port: 9999
+spring:
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/vue?useSSL=true&serverTimezone=UTC&useUnicode=true&characterEncoding=utf8
+    username: root
+    password: root
+  jpa:
+    database : MYSQL
+    show-sql : true
+logging:
+  level:
+    root: info
+    com.my.* : debug
+  file:
+    name: log/server.log
+mybatis:
+ mapper-locations: classpath:mapper/*.xml

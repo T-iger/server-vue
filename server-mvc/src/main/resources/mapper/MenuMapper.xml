@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.my.servermvc.dao.MenuDao">
+
+    <resultMap id="menu" type="com.my.servermvc.entity.Menu">
+        <result column="menu_id" property="menuId" jdbcType="CHAR"></result>
+        <result column="menu_name" property="menuName" jdbcType="CHAR"></result>
+        <result column="menu_type" property="menuType" jdbcType="INTEGER"></result>
+        <result column="path" property="path" jdbcType="CHAR"></result>
+        <result column="parent_id" property="parentId" jdbcType="CHAR"></result>
+        <result column="icon" property="icon" jdbcType="CHAR"></result>
+    </resultMap>
+
+    <select id="selectMenuList" resultMap="menu">
+        select * from menu
+    </select>
+
+</mapper>
